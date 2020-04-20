@@ -29,7 +29,7 @@
 
     <!-- Nav Item - Posts -->
     <li class="nav-item">
-        <a class="nav-link" href="./post.php">
+        <a class="nav-link" href="./posts.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Quản lý bài viết</span></a>
     </li>
@@ -43,14 +43,14 @@
 
     <!-- Nav Item - Tags -->
     <li class="nav-item">
-        <a class="nav-link" href="./tag.php">
+        <a class="nav-link" href="./tags.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Quản lý tags</span></a>
     </li>
 
     <!-- Nav Item - Comments -->
     <li class="nav-item">
-        <a class="nav-link" href="./comment.php">
+        <a class="nav-link" href="./comments.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Quản lý Comments</span></a>
     </li>
@@ -69,7 +69,7 @@
 
     <!-- Nav Item - Users -->
     <li class="nav-item">
-        <a class="nav-link" href="./user.php">
+        <a class="nav-link" href="./users.php">
             <i class="fas fa-user fa-table"></i>
             <span>Quản lý người dùng</span></a>
     </li>

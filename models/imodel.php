@@ -1,5 +1,5 @@
 <?php
-interface Imodel
+interface IModel
 {
     function getAll($offset, $count);
     function insert($payload);
