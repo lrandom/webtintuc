@@ -1,15 +1,32 @@
 <?php
-echo 'đây là giao diện admin';
+require_once('includes/header.php');
+require_once('includes/navbar.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>    
-</head>
-<body>
-    <a href="logout.php">Đăng xuất</a>
-</body>
-</html>
+
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            </div>
+
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+    <?php
+    require_once('includes/footer.php');
+    ?>
