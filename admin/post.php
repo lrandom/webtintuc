@@ -15,7 +15,7 @@ require_once('includes/navbar.php');
     </div>
 
 
-    <h5>đây là trang admin</h5>
+    <h5>đây là trang quản lý post</h5>
 
 
 </div>
