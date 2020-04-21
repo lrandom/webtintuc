@@ -1,5 +1,5 @@
 <?php
-require_once('./../../db.php');
+require_once('./../db.php');
 require_once('imodel.php');
 
 class Users extends DB implements IModel

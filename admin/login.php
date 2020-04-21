@@ -2,7 +2,7 @@
 session_start();
 
 require_once('./../db.php');
-//require_once('./commons/header.php');
+
 
 if (isset($_POST['username']) && isset($_POST['pwd'])) {
     $username = $_POST['username'];
