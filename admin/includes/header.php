@@ -1,8 +1,12 @@
 <?php
 session_start();
 
-if (isset($_SESSION['success'])) {
-    unset($_SESSION['success']);
+if (isset($_SESSION['add_user_success'])) {
+    unset($_SESSION['add_user_success']);
+}
+
+if (isset($_SESSION['update_user_success'])) {
+    unset($_SESSION['update_user_success']);
 }
 
 if (!isset($_SESSION['user'])) {

@@ -1,8 +1,4 @@
 <?php
-if (isset($_SESSION['success'])) {
-    unset($_SESSION['success']);
-}
-
 
 require_once('includes/header.php');
 require_once('includes/navbar.php');
@@ -13,7 +9,7 @@ if (isset($_POST['username'])) {
     $users = new Users;
     $count = $users->insert($_POST);
     if ($count == 1) {
-        $_SESSION['success'] = 'Thêm thành công';
+        $_SESSION['add_user_success'] = 'Thêm thành công';
     }
 }
 
@@ -29,10 +25,10 @@ if (isset($_POST['username'])) {
 
     <div class="container">
         <?php
-        if (isset($_SESSION['success'])) {
+        if (isset($_SESSION['add_user_success'])) {
         ?>
             <div class="alert alert-success" role="alert">
-                <?php echo $_SESSION['success'] ?> <br>
+                <?php echo $_SESSION['add_user_success'] ?>
 
             </div>
         <?php
@@ -42,61 +38,57 @@ if (isset($_POST['username'])) {
         <form method="POST">
 
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+                <label class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
                     <input type="text" name="username" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
+                <label class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
                     <input type="text" name="pwd" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Role</label>
+                <label class="col-sm-2 col-form-label">Role</label>
                 <div class="col-sm-10">
-                    <select name="role">
-                        <option value="0">Admin</option>
-                        <option value="1">Normal user</option>
-                    </select>
+                    <input type="radio" name="role" value="0">Admin <br>
+                    <input type="radio" name="role" value="1">Normal user
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Fullname</label>
+                <label class="col-sm-2 col-form-label">Fullname</label>
                 <div class="col-sm-10">
                     <input type="text" name="fullname" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Date of birth</label>
+                <label class="col-sm-2 col-form-label">Date of birth</label>
                 <div class="col-sm-10">
                     <input type="date" name="dob" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Gender</label>
+                <label class="col-sm-2 col-form-label">Gender</label>
                 <div class="col-sm-10">
-                    <select name="gender">
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                    </select>
+                    <input type="radio" name="gender" value="1">Male <br>
+                    <input type="radio" name="gender" value="2">Female
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <label class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="email" name="email" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
+                <label class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                     <input type="text" name="phone" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Address</label>
+                <label class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-10">
                     <input type="text" name="address" required="true">
                 </div>
