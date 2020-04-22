@@ -97,7 +97,7 @@ if (isset($_POST['id'])) {
 
             <input type="submit" class="btn btn-success" value="Update"></input>
             <input type="reset" class="btn btn-primary" value=Reset>
-            <a href="users.php" class="btn btn-secondary ">Back</a>
+            <a href="users.php" class="btn btn-secondary">Back</a>
         </form>
     </div>
 
