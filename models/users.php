@@ -23,7 +23,7 @@ class Users extends DB implements IModel
 
         try {
             $username = $payload['username'];
-            $password = $payload['password'];
+            $password = $payload['pwd'];
             $role = $payload['role'];
             $fullname = $payload['fullname'];
             $dob = $payload['dob'];

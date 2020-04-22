@@ -3,11 +3,6 @@ session_start();
 
 require_once('./../db.php');
 
-if(isset($_SESSION['role_invalid']) || isset($_SESSION['not_exist'])){
-    unset($_SESSION['role_invalid']);
-    unset($_SESSION['not_exist']);
-}
-
 
 if (isset($_POST['username']) && isset($_POST['pwd'])) {
     $username = $_POST['username'];
@@ -24,12 +19,12 @@ if (isset($_POST['username']) && isset($_POST['pwd'])) {
             $_SESSION['user'] = $user['0'];
             header('Location:index.php');
         } else {
-            // echo 'Bạn không có quyền đăng nhập vào trang admin';
-            $_SESSION['role_invalid']='role invalid';
+            echo 'Bạn không có quyền đăng nhập vào trang admin';
+            // $_SESSION['role_invalid'] = 'role invalid';
         }
     } else {
-        // echo 'not exist';
-        $_SESSION['not_exist']='not exist';
+        echo 'not exist';
+        // $_SESSION['not_exist'] = 'not exist';
     }
 }
 ?>
@@ -83,7 +78,6 @@ if (isset($_POST['username']) && isset($_POST['pwd'])) {
                                             <input type="password" name="pwd" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
 
-                                        
 
                                         <input type="submit" class="btn btn-primary btn-user btn-block" name="login" value="Login">
                                         <hr>

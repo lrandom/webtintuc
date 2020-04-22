@@ -1,8 +1,21 @@
 <?php
+if (isset($_SESSION['success'])) {
+    unset($_SESSION['success']);
+}
+
+
 require_once('includes/header.php');
 require_once('includes/navbar.php');
 require_once('./../models/users.php');
 
+
+if (isset($_POST['username'])) {
+    $users = new Users;
+    $count = $users->insert($_POST);
+    if ($count == 1) {
+        $_SESSION['success'] = 'Thêm thành công';
+    }
+}
 
 ?>
 
@@ -18,7 +31,7 @@ require_once('./../models/users.php');
         <?php
         if (isset($_SESSION['success'])) {
         ?>
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-success" role="alert">
                 <?php echo $_SESSION['success'] ?> <br>
 
             </div>
@@ -29,27 +42,69 @@ require_once('./../models/users.php');
         <form method="POST">
 
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
-                    <input type="text" name="title" required="true">
+                    <input type="text" name="username" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Price</label>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                    <input type="number" name="price" required="true">
+                    <input type="text" name="pwd" required="true">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Author</label>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Role</label>
                 <div class="col-sm-10">
-                    <input type="text" name="author" required="true">
+                    <select name="role">
+                        <option value="0">Admin</option>
+                        <option value="1">Normal user</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Fullname</label>
+                <div class="col-sm-10">
+                    <input type="text" name="fullname" required="true">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Date of birth</label>
+                <div class="col-sm-10">
+                    <input type="date" name="dob" required="true">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-sm-10">
+                    <select name="gender">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" name="email" required="true">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" name="phone" required="true">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                    <input type="text" name="address" required="true">
                 </div>
             </div>
 
-            <input type="submit" class="btn btn-success" value="Add book"></input>
+            <input type="submit" class="btn btn-success" value="Add"></input>
             <input type="reset" class="btn btn-primary" value=Reset>
-            <a href="index.php" class="btn btn-secondary ">Back to home page</a>
+            <a href="users.php" class="btn btn-secondary ">Back</a>
         </form>
     </div>
 
