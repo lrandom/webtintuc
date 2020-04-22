@@ -29,7 +29,7 @@ $users = new Users();
                 </tr>
             </thead>
             <br>
-            <a class="btn btn-primary" href="users/users_add.php">Thêm</a>
+            <a class="btn btn-primary" href="users_add.php">Thêm</a>
             <br>
             <br>
 
