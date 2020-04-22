@@ -43,7 +43,7 @@ if (isset($_POST['id'])) {
 
         <form method="POST">
 
-            <input type="hidden" name="id" value="<?php echo $obj['id'] ?>" />
+            <input type="hidden" name="id" value="<?php echo $obj['id'] ?>">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">

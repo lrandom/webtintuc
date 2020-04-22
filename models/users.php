@@ -96,4 +96,18 @@ class Users extends DB implements IModel
         }
         return $r;
     }
+
+    function change_pwd($pwd, $id)
+    {
+        try {
+            $stm = $this->db->prepare('UPDATE ' . self::tableName . ' 
+            SET pwd = :pwd WHERE id = :id');
+            $stm->execute(array(
+                ':id' => $id,
+                ':pwd' => md5($pwd)
+            ));
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+    }
 }
