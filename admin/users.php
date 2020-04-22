@@ -4,6 +4,20 @@ require_once('includes/navbar.php');
 require_once('./../models/users.php');
 
 $users = new Users();
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+    switch ($action) {
+        case 'delete':
+            if (is_numeric($_GET['id'])) {
+                $users->delete($_GET['id']);
+            }
+            break;
+
+        default:
+            # code...
+            break;
+    }
+}
 ?>
 
 
@@ -47,7 +61,7 @@ $users = new Users();
                         <td><?php echo $r['email'] ?></td>
                         <td>
                             <a class="btn btn-warning" href="edit.php?id=<?php echo $r['id'] ?>">Sửa</a>
-                            <a class="btn btn-danger" href="?action=delete&id=<?php echo $r['id'] ?>">Xoá</a>
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#deleteUserModal">Xoá</a>
                         </td>
                     </tr>
                 <?php
@@ -61,6 +75,24 @@ $users = new Users();
 
 </div>
 <!-- /.container-fluid -->
+
+<div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Xóa không?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="?action=delete&id=<?php echo $r['id'] ?>">Xóa chứ để làm gì</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
