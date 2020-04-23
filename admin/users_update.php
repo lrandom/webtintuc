@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     if (is_numeric($id)) {
         $obj = $users->getByid($id);
-        //var_dump($obj);die();
+        // var_dump($obj);die();
     } else {
         header('Location:index.php');
     }
@@ -18,6 +18,7 @@ if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $users->update($_POST);
     $_SESSION['update_user_success'] = 'Cập nhật thành công';
+    // ob_start();
     header('Location:users_update.php?id=' . $id);
 }
 ?>
